@@ -27,6 +27,7 @@ func main() {
 	r.Post("/campaigns", func(w http.ResponseWriter, r *http.Request) {
 		var request contract.NewCampaign
 		render.DecodeJSON(r.Body, &request)
+		fmt.Println(request)
 
 		id, err := service.Create(request)
 		if err != nil {

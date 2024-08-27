@@ -23,7 +23,7 @@ var (
 	newCamapaign = contract.NewCampaign{
 		Name:    "Campaign x",
 		Content: "Content x",
-		Email:   []string{"a@a.com"},
+		Emails:  []string{"a@a.com"},
 	}
 
 	service = Service{}
@@ -55,7 +55,7 @@ func Test_Create_Save_Campaign(t *testing.T) {
 	repositoryMock := new(repositoryMocky)
 	repositoryMock.On("Save", mock.MatchedBy(func(campaign *Campaign) bool {
 		if campaign.Name != newCamapaign.Name || campaign.Content != newCamapaign.Content ||
-			len(campaign.Contacts) != len(newCamapaign.Email) {
+			len(campaign.Contacts) != len(newCamapaign.Emails) {
 			return false
 		}
 		return true
