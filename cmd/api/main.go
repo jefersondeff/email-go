@@ -27,6 +27,7 @@ func main() {
 		CampaignService: service,
 	}
 	r.Post("/campaigns", handler.CampaignPost)
+	r.Get("/campaigns", handler.CampaignGet)
 
 	fmt.Println("Listening on port " + PORT)
 	http.ListenAndServe(":"+PORT, r)

@@ -19,6 +19,10 @@ func (r *repositoryMocky) Save(campaign *Campaign) error {
 	return args.Error(0)
 }
 
+func (r *repositoryMocky) Get() []Campaign {
+	return []Campaign{}
+}
+
 var (
 	newCamapaign = contract.NewCampaign{
 		Name:    "Campaign x",

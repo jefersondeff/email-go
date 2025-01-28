@@ -2,7 +2,10 @@ POST http://localhost:3000/campaigns
 content-type: application/json
 
 {
-    "name": "jeferson",
+    "name": "jeferson 2",
     "content": "change password",
-    "emails": ["jefer@gmail.com"]
+    "emails": ["jefersonactf@gmail.com"]
 }
+
+### 
+GET http://localhost:3000/campaigns 
