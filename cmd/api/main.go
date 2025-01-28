@@ -26,8 +26,8 @@ func main() {
 	handler := endpoints.Handler{
 		CampaignService: service,
 	}
-	r.Post("/campaigns", handler.CampaignPost)
-	r.Get("/campaigns", handler.CampaignGet)
+	r.Post("/campaigns", endpoints.HandlerError(handler.CampaignPost))
+	r.Get("/campaigns", endpoints.HandlerError(handler.CampaignGet))
 
 	fmt.Println("Listening on port " + PORT)
 	http.ListenAndServe(":"+PORT, r)

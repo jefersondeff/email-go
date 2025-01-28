@@ -19,8 +19,8 @@ func (r *repositoryMocky) Save(campaign *Campaign) error {
 	return args.Error(0)
 }
 
-func (r *repositoryMocky) Get() []Campaign {
-	return []Campaign{}
+func (r *repositoryMocky) Get() ([]Campaign, error) {
+	return []Campaign{}, nil
 }
 
 var (
